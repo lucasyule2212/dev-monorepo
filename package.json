@@ -5,7 +5,10 @@
     "build": "turbo build",
     "dev": "turbo dev",
     "lint": "turbo lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "commit": "cz",
+    "postinstall": "husky install",
+    "check-types": "tsc --noEmit --pretty"
   },
   "devDependencies": {
     "@commitlint/cli": "^18.6.0",

@@ -16,6 +16,7 @@
     "@repo/eslint-config": "workspace:*",
     "@repo/tailwind-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
+    "cz-conventional-changelog": "^3.3.0",
     "husky": "^9.0.6",
     "lint-staged": "^15.2.0",
     "prettier": "^3.1.1",
@@ -30,5 +31,10 @@
       "eslint --fix"
     ],
     "**/*": "prettier --write --ignore-unknown"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }

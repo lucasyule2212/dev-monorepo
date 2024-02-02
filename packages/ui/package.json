@@ -6,12 +6,10 @@
     "**/*.css"
   ],
   "exports": {
-    "./styles.css": "./dist/index.css"
+    "./styles.css": "./src/styles.css"
   },
   "scripts": {
-    "build": "tailwindcss -i ./src/styles.css -o dist/index.css",
     "lint": "eslint src/",
-    "dev": "tailwindcss -i ./src/styles.css -o ./dist/index.css --watch",
     "type-check": "tsc --noEmit"
   },
   "peerDependencies": {
@@ -19,7 +17,6 @@
   },
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",
-    "@repo/tailwind-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
     "@types/react": "^18.2.46",
     "autoprefixer": "^10.4.16",

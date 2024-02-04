@@ -6,8 +6,10 @@
     "**/*.css"
   ],
   "exports": {
-    "./styles.css": "./src/styles.css",
-    "./components": "./src/components/ui"
+    "./globals.css": "./src/globals.css",
+    "./components/*": "./src/components/ui/*.tsx",
+    "./utils.ts": "./src/lib/utils.ts",
+    "./tailwind.config": "./tailwind.config.ts"
   },
   "scripts": {
     "lint": "eslint src/",

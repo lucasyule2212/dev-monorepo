@@ -10,6 +10,9 @@
     "postinstall": "husky install",
     "check-types": "tsc --noEmit --pretty"
   },
+  "dependencies": {
+    "@repo/ui": "workspace:*"
+  },
   "devDependencies": {
     "@commitlint/cli": "^18.6.0",
     "@commitlint/config-conventional": "^18.6.0",

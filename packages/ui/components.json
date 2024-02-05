@@ -4,14 +4,14 @@
   "rsc": true,
   "tsx": true,
   "tailwind": {
-    "config": "shadcn.config.js",
-    "css": "@/styles.css",
-    "baseColor": "zinc",
+    "config": "tailwind.config.ts",
+    "css": "src/globals.css",
+    "baseColor": "slate",
     "cssVariables": true,
     "prefix": ""
   },
   "aliases": {
-    "components": "@/components",
-    "utils": "@/lib/utils"
+    "components": "@ui/components",
+    "utils": "@ui/lib/utils"
   }
 }

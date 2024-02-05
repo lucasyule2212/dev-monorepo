@@ -3,7 +3,7 @@ import { Button } from "@repo/ui/components/ui/button";
 export default function Page() {
   return (
     <main>
-      <Button>Click me</Button>
+      <a href="/api/auth/login">Login</a>
     </main>
   );
 }

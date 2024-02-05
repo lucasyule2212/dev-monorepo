@@ -72,9 +72,3 @@ In development...
 
 ## Screenshots
 In development...
-
-![successCheckout](https://github.com/lucasyule2212/dev-store/assets/55456226/cbbfbcaf-5a21-4c3f-89d3-2d105e837c91)
-
-
-
-

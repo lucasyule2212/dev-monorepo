@@ -17,7 +17,7 @@ Project of an online course store using a monorepo with Next.js for the frontend
 
 **Backend:** Nest.js, GraphQL, Apollo Client, Apache Kafka
 
-**Database:** Amazon S3, PrismaORM
+**Database:** Amazon RDS (PostegreSQL), PrismaORM
 
 **Styling/Animations/Icons:** TailwindCSS, ShadcnUI, RadixUI, Lucide Icons
 
@@ -50,7 +50,7 @@ Project of an online course store using a monorepo with Next.js for the frontend
 
 - Monorepo architecture by Turborepo
 - Microservices architecture
-- Cloud database by Amazon S3
+- Cloud database by Amazon RDS (PostgreSQL)
 - E2E testing with Cypress
     - Including CI Workflow with Cypress
 - Unitary testing with Jest
@@ -63,7 +63,7 @@ Project of an online course store using a monorepo with Next.js for the frontend
 - Nest.js framework
 - Monorepo architecture and configuration
 - Auth0 authentication management
-- Amazon S3 database
+- Amazon RDS
 - Microservices architecture + Apache Kafka
 - GraphQL + Apollo Client practical studies
   

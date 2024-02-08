@@ -36,7 +36,7 @@ importers:
         version: 5.9.1
       turbo:
         specifier: latest
-        version: 1.12.2
+        version: 1.12.3
 
   apps/purchases:
     dependencies:
@@ -52,6 +52,9 @@ importers:
       "@nestjs/platform-express":
         specifier: ^10.0.0
         version: 10.3.1(@nestjs/common@10.3.1)(@nestjs/core@10.3.1)
+      "@prisma/client":
+        specifier: 5.9.1
+        version: 5.9.1(prisma@5.9.1)
       express-oauth2-jwt-bearer:
         specifier: ^1.6.0
         version: 1.6.0
@@ -104,6 +107,9 @@ importers:
       prettier:
         specifier: ^3.0.0
         version: 3.1.1
+      prisma:
+        specifier: ^5.9.1
+        version: 5.9.1
       source-map-support:
         specifier: ^0.5.21
         version: 0.5.21
@@ -887,6 +893,7 @@ packages:
         integrity: sha512-Ptfa865arNozlkjxrYG3qt6wT9AlhNUHeuDyKEZiTL/l0ftncFhK/KN0t/EAMV2tec+0Mwxo0FmhbESj/bI+1g==,
       }
     engines: { node: ">=v18" }
+    requiresBuild: true
     dependencies:
       "@commitlint/types": 18.6.0
       ajv: 8.12.0
@@ -913,6 +920,7 @@ packages:
         integrity: sha512-a37Nd3bDQydtg9PCLLWM9ZC+GO7X5i4zJvrggJv5jBhaHsXeQ9ZWdO6ODYR+f0LxBXXNYK3geYXJrCWUCP8JEg==,
       }
     engines: { node: ">=v18" }
+    requiresBuild: true
     dev: true
 
   /@commitlint/format@18.6.0:
@@ -1012,6 +1020,7 @@ packages:
         integrity: sha512-k2Xp+Fxeggki2i90vGrbiLDMefPius3zGSTFFlRAPKce/SWLbZtI+uqE9Mne23mHO5lmcSV8z5m6ziiJwGpOcg==,
       }
     engines: { node: ">=v18" }
+    requiresBuild: true
     dependencies:
       "@commitlint/config-validator": 18.6.0
       "@commitlint/types": 18.6.0
@@ -1944,19 +1953,33 @@ packages:
       tslib: 2.6.2
     dev: true
 
+  /@prisma/client@5.9.1(prisma@5.9.1):
+    resolution:
+      {
+        integrity: sha512-caSOnG4kxcSkhqC/2ShV7rEoWwd3XrftokxJqOCMVvia4NYV/TPtJlS9C2os3Igxw/Qyxumj9GBQzcStzECvtQ==,
+      }
+    engines: { node: ">=16.13" }
+    requiresBuild: true
+    peerDependencies:
+      prisma: "*"
+    peerDependenciesMeta:
+      prisma:
+        optional: true
+    dependencies:
+      prisma: 5.9.1
+    dev: false
+
   /@prisma/debug@5.9.1:
     resolution:
       {
         integrity: sha512-yAHFSFCg8KVoL0oRUno3m60GAjsUKYUDkQ+9BA2X2JfVR3kRVSJFc/GpQ2fSORi4pSHZR9orfM4UC9OVXIFFTA==,
       }
-    dev: true
 
   /@prisma/engines-version@5.9.0-32.23fdc5965b1e05fc54e5f26ed3de66776b93de64:
     resolution:
       {
         integrity: sha512-HFl7275yF0FWbdcNvcSRbbu9JCBSLMcurYwvWc8WGDnpu7APxQo2ONtZrUggU3WxLxUJ2uBX+0GOFIcJeVeOOQ==,
       }
-    dev: true
 
   /@prisma/engines@5.9.1:
     resolution:
@@ -1969,7 +1992,6 @@ packages:
       "@prisma/engines-version": 5.9.0-32.23fdc5965b1e05fc54e5f26ed3de66776b93de64
       "@prisma/fetch-engine": 5.9.1
       "@prisma/get-platform": 5.9.1
-    dev: true
 
   /@prisma/fetch-engine@5.9.1:
     resolution:
@@ -1980,7 +2002,6 @@ packages:
       "@prisma/debug": 5.9.1
       "@prisma/engines-version": 5.9.0-32.23fdc5965b1e05fc54e5f26ed3de66776b93de64
       "@prisma/get-platform": 5.9.1
-    dev: true
 
   /@prisma/get-platform@5.9.1:
     resolution:
@@ -1989,7 +2010,6 @@ packages:
       }
     dependencies:
       "@prisma/debug": 5.9.1
-    dev: true
 
   /@radix-ui/react-compose-refs@1.0.1(@types/react@18.2.46)(react@18.2.0):
     resolution:
@@ -4239,6 +4259,7 @@ packages:
         integrity: sha512-+8cK7jRAReYkMwMiG+bxhcNKiHJDM6bR9FD/nGBXOWdMLuYawjF5cGrtLilJ+LGd3ZjCXnJjR5DkfWPoIVlqJA==,
       }
     engines: { node: ">=v16" }
+    requiresBuild: true
     peerDependencies:
       "@types/node": "*"
       cosmiconfig: ">=8.2"
@@ -7972,6 +7993,7 @@ packages:
       {
         integrity: sha512-oSXzaWypCMHkPC3NvBEaPHf0KsA5mvPrOPgQWDsbg8n7orZ290M0BmC/jgRZ4vcJ6DTAhjrsSYgdsW/F+MFOBA==,
       }
+    requiresBuild: true
     dev: true
 
   /lodash.kebabcase@4.1.1:
@@ -8007,6 +8029,7 @@ packages:
       {
         integrity: sha512-GK3g5RPZWTRSeLSpgP8Xhra+pnjBC56q9FZYe1d5RN3TJ35dbkGy3YqBSMbyCrlbi+CM9Z3Jk5yTL7RCsqboyQ==,
       }
+    requiresBuild: true
     dev: true
 
   /lodash.snakecase@4.1.1:
@@ -8028,6 +8051,7 @@ packages:
       {
         integrity: sha512-xfBaXQd9ryd9dlSDvnvI0lvxfLJlYAZzXomUYzLKtUeOQvOP5piqAWuGtrhWeqaXK9hhoM/iyJc5AV+XfsX3HQ==,
       }
+    requiresBuild: true
     dev: true
 
   /lodash.upperfirst@4.3.1:
@@ -9236,7 +9260,6 @@ packages:
     requiresBuild: true
     dependencies:
       "@prisma/engines": 5.9.1
-    dev: true
 
   /process-nextick-args@2.0.1:
     resolution:
@@ -10926,10 +10949,10 @@ packages:
       typescript: 5.3.3
     dev: true
 
-  /turbo-darwin-64@1.12.2:
+  /turbo-darwin-64@1.12.3:
     resolution:
       {
-        integrity: sha512-Aq/ePQ5KNx6XGwlZWTVTqpQYfysm1vkwkI6kAYgrX5DjMWn+tUXrSgNx4YNte0F+V4DQ7PtuWX+jRG0h0ZNg0A==,
+        integrity: sha512-dDglIaux+A4jOnB9CDH69sujmrnuLJLrKw1t3J+if6ySlFuxSwC++gDq9TVuOZo2+S7lFkGh+x5ytn3wp+jE8Q==,
       }
     cpu: [x64]
     os: [darwin]
@@ -10937,10 +10960,10 @@ packages:
     dev: true
     optional: true
 
-  /turbo-darwin-arm64@1.12.2:
+  /turbo-darwin-arm64@1.12.3:
     resolution:
       {
-        integrity: sha512-wTr+dqkwJo/eXE+4SPTSeNBKyyfQJhI6I9sKVlCSBmtaNEqoGNgdVzgMUdqrg9AIFzLIiKO+zhfskNaSWpVFow==,
+        integrity: sha512-5TqqeujEyHMoVUWGzSzUl5ERSg7HDCdbU3gBs5ziWTpFRpeJ/+Y15kYyZJcMQcubRIH3Y1hL/yA5IhlGdgXOMA==,
       }
     cpu: [arm64]
     os: [darwin]
@@ -10948,10 +10971,10 @@ packages:
     dev: true
     optional: true
 
-  /turbo-linux-64@1.12.2:
+  /turbo-linux-64@1.12.3:
     resolution:
       {
-        integrity: sha512-BggBKrLojGarDaa2zBo+kUR3fmjpd6bLA8Unm3Aa2oJw0UvEi3Brd+w9lNsPZHXXQYBUzNUY2gCdxf3RteWb0g==,
+        integrity: sha512-yUreU+/gq4vlBtcdyfjz7slwz4zM1RG8sSXvyHmAS+QXqSrGkegg4qLl2fRbv/c3EyA/XbfcZuD6tcrXkejr6g==,
       }
     cpu: [x64]
     os: [linux]
@@ -10959,10 +10982,10 @@ packages:
     dev: true
     optional: true
 
-  /turbo-linux-arm64@1.12.2:
+  /turbo-linux-arm64@1.12.3:
     resolution:
       {
-        integrity: sha512-v/apSRvVuwYjq1D9MJFsHv2EpGd1S4VoSdZvVfW6FaM06L8CFZa92urNR1svdGYN28YVKwK9Ikc9qudC6t/d5A==,
+        integrity: sha512-XRwAsp2eRSqZmaMVNrmHoKqofeJMuD87zmefZLTRAObh38hIwKgyl2QRsJIbteob5RN77yFbv3lAJ36UIY5h7w==,
       }
     cpu: [arm64]
     os: [linux]
@@ -10970,10 +10993,10 @@ packages:
     dev: true
     optional: true
 
-  /turbo-windows-64@1.12.2:
+  /turbo-windows-64@1.12.3:
     resolution:
       {
-        integrity: sha512-3uDdwXcRGkgopYFdPDpxQiuQjfQ12Fxq0fhj+iGymav0eWA4W4wzYwSdlUp6rT22qOBIzaEsrIspRwx1DsMkNg==,
+        integrity: sha512-CPnRfnUCtmFeShOtUdMCthySjmyHaoTyh9JueiYFvtCNeO3WfDMj63dpOQstQWHdJFYmIrIGfhAclcds9ePQYA==,
       }
     cpu: [x64]
     os: [win32]
@@ -10981,10 +11004,10 @@ packages:
     dev: true
     optional: true
 
-  /turbo-windows-arm64@1.12.2:
+  /turbo-windows-arm64@1.12.3:
     resolution:
       {
-        integrity: sha512-zNIHnwtQfJSjFi7movwhPQh2rfrcKZ7Xv609EN1yX0gEp9GxooCUi2yNnBQ8wTqFjioA2M5hZtGJQ0RrKaEm/Q==,
+        integrity: sha512-cYA/wlzvp4vlCNHYJ2AjNS3FLXWwUC/5CJompBkTeKFFB6AviE/iLkbIhFikCVSNXZk/3AGanpMUXIkt3bdlwg==,
       }
     cpu: [arm64]
     os: [win32]
@@ -10992,19 +11015,19 @@ packages:
     dev: true
     optional: true
 
-  /turbo@1.12.2:
+  /turbo@1.12.3:
     resolution:
       {
-        integrity: sha512-BcoQjBZ+LJCMdjzWhzQflOinUjek28rWXj07aaaAQ8T3Ehs0JFSjIsXOm4qIbo52G4xk3gFVcUtJhh/QRADl7g==,
+        integrity: sha512-a6q8I0TK9ohACYbkmxzG/JYPuDC4VCvfmXLTlf321qQ4BIAhoyaOj/O2g+zJ6L1vNYnZ82G4LrbMfgLLngbLsg==,
       }
     hasBin: true
     optionalDependencies:
-      turbo-darwin-64: 1.12.2
-      turbo-darwin-arm64: 1.12.2
-      turbo-linux-64: 1.12.2
-      turbo-linux-arm64: 1.12.2
-      turbo-windows-64: 1.12.2
-      turbo-windows-arm64: 1.12.2
+      turbo-darwin-64: 1.12.3
+      turbo-darwin-arm64: 1.12.3
+      turbo-linux-64: 1.12.3
+      turbo-linux-arm64: 1.12.3
+      turbo-windows-64: 1.12.3
+      turbo-windows-arm64: 1.12.3
     dev: true
 
   /type-check@0.4.0:

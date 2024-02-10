@@ -23,7 +23,8 @@ export class PrismaService
   }
 
   async enableShutdownHooks(app: INestApplication) {
-    this.$on('beforeExit', async () => {
+    this.$on('beforeExit' as never, async () => {
+      // Updated the type of the event parameter
       await app.close();
     });
   }

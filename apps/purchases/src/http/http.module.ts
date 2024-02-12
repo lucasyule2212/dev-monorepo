@@ -4,6 +4,7 @@ import { ConfigModule } from '@nestjs/config';
 import { GraphQLModule } from '@nestjs/graphql';
 import * as path from 'node:path';
 import { DatabaseModule } from 'src/database/database.module';
+import { ProductsService } from 'src/services/products/products.service';
 import { ProductsResolverResolver } from './graphql/resolvers/products/products.resolver';
 
 @Module({
@@ -15,6 +16,6 @@ import { ProductsResolverResolver } from './graphql/resolvers/products/products.
       autoSchemaFile: path.resolve(process.cwd(), 'src/schema.gql'),
     }),
   ],
-  providers: [ProductsResolverResolver],
+  providers: [ProductsResolverResolver, ProductsService],
 })
 export class HttpModule {}

@@ -12,4 +12,12 @@ export class StudentsService {
       },
     });
   }
+
+  async getStudentById(studentId: string) {
+    return await this.prisma.student.findUnique({
+      where: {
+        id: studentId,
+      },
+    });
+  }
 }

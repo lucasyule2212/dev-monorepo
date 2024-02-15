@@ -46,8 +46,8 @@ Project of an online course store using a monorepo with Next.js for the frontend
 ## Features
 
 - Monorepo architecture by Turborepo
-- Microservices architecture
-- Cloud database by Amazon RDS (PostgreSQL)
+- Microservices architecture with Apache Kafka.
+- Cloud database by Neon.tech (PostgreSQL)
 - E2E testing with Cypress
   - Including CI Workflow with Cypress
 - Unitary testing with Jest
@@ -64,9 +64,8 @@ Project of an online course store using a monorepo with Next.js for the frontend
 - GraphQL + Apollo Client practical studies
 
 ## Roadmap
-
-In development...
-
+ - [ ] Add e2e testing with Cypress
+ 
 ## Screenshots
 
 In development...

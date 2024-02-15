@@ -60,7 +60,7 @@ Project of an online course store using a monorepo with Next.js for the frontend
 - Monorepo architecture and configuration
 - Auth0 authentication management
 - Serverless Database with Neon
-- Microservices architecture + Apache Kafka
+- Microservices architecture + Apache Kafka (Message Brokers)
 - GraphQL + Apollo Client practical studies
 
 ## Roadmap

@@ -53,6 +53,7 @@ Project of an online course store using a monorepo with Next.js for the frontend
 - Unitary testing with Jest
 - Authentication by Auth0
 - Payment simulation with Stripe
+- GraphQL API Gateway with Apollo Federation
 
 ## Learnings...
 
@@ -62,6 +63,7 @@ Project of an online course store using a monorepo with Next.js for the frontend
 - Serverless Database with Neon
 - Microservices architecture + Apache Kafka (Message Brokers)
 - GraphQL + Apollo Client practical studies
+- Apollo Federation
 
 ## Roadmap
  - [ ] Add e2e testing with Cypress

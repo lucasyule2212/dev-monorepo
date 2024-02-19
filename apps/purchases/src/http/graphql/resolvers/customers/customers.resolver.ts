@@ -9,6 +9,8 @@ import { AuthUser, CurrentUser } from 'src/http/authorization/current-user';
 import { CustomersService } from 'src/services/customers.service';
 import { PurchasesService } from 'src/services/purchases/purchases.service';
 import { Customer } from '../../models/customer';
+import { UseGuards } from '@nestjs/common';
+import { AuthorizationGuard } from 'src/http/authorization/authorization.guard';
 
 @Resolver(() => Customer)
 export class CustomersResolver {
@@ -18,7 +20,7 @@ export class CustomersResolver {
   ) {}
 
   @Query(() => Customer)
-  // * This is a public endpoint
+  @UseGuards(AuthorizationGuard)
   me(@CurrentUser() user: AuthUser) {
     return this.customersService.getCustomerByAuthUserId(user.sub);
   }

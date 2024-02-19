@@ -2,14 +2,24 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
+directive @key(fields: String!) on OBJECT | INTERFACE
+
+directive @extends on OBJECT | INTERFACE
+
+directive @external on OBJECT | FIELD_DEFINITION
+
+directive @requires(fields: String!) on FIELD_DEFINITION
+
+directive @provides(fields: String!) on FIELD_DEFINITION
+
 type Course {
   id: ID!
   title: String!
   slug: String!
 }
 
-type Student {
-  id: ID!
+type User {
+  authUserId: ID!
   enrollment: [Enrollment!]!
 }
 
@@ -17,7 +27,7 @@ type Enrollment {
   id: ID!
   canceledAt: DateTime
   createdAt: DateTime
-  student: Student!
+  student: User!
   course: Course!
 }
 
@@ -30,8 +40,8 @@ type Query {
   courses: [Course!]!
   course(id: String!): Course!
   enrollments: [Enrollment!]!
-  me: Student!
-  students: [Student!]!
+  me: User!
+  students: [User!]!
 }
 
 type Mutation {

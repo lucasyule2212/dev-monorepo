@@ -3,7 +3,7 @@ import { Enrollment } from './enrollment';
 
 @ObjectType('User')
 @Directive('@extends')
-@Directive('@key(fields: "authUserId"')
+@Directive('@key(fields: "authUserId")')
 export class Student {
   id: string;
 

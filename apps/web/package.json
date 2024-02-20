@@ -9,8 +9,10 @@
     "lint": "eslint . --max-warnings 0"
   },
   "dependencies": {
+    "@apollo/client": "^3.9.5",
     "@auth0/nextjs-auth0": "^3.5.0",
     "@repo/ui": "workspace:*",
+    "graphql": "15",
     "next": "^14.0.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"

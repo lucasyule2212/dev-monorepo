@@ -1,18 +1,10 @@
 "use client";
 
+import { useGetProductsQuery } from "@/graphql/generated/graphql";
 import { withApollo } from "@/lib/withApolloClient";
-import { gql, useQuery } from "@apollo/client";
-
-const PRODUCTS_QUERY = gql`
-  query GetProducts {
-    products {
-      title
-    }
-  }
-`;
 
 function QueryComponent() {
-  const { data, loading, error } = useQuery(PRODUCTS_QUERY);
+  const { data, loading, error } = useGetProductsQuery();
 
   if (loading) {
     return <div>Loading...</div>;

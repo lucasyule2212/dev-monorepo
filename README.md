@@ -64,10 +64,8 @@ Project of an online course store using a monorepo with Next.js for the frontend
 - Microservices architecture + Apache Kafka (Message Brokers)
 - GraphQL + Apollo Client practical studies
 - Apollo Federation
+- GraphQL Codegen
 
-## Roadmap
- - [ ] Add e2e testing with Cypress
- 
 ## Screenshots
 
 In development...

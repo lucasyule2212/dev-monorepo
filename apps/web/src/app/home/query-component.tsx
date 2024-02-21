@@ -1,5 +1,6 @@
 "use client";
 
+import { withApollo } from "@/lib/withApolloClient";
 import { gql, useQuery } from "@apollo/client";
 
 const PRODUCTS_QUERY = gql`
@@ -10,7 +11,7 @@ const PRODUCTS_QUERY = gql`
   }
 `;
 
-export default function QueryComponent() {
+function QueryComponent() {
   const { data, loading, error } = useQuery(PRODUCTS_QUERY);
 
   if (loading) {
@@ -23,3 +24,5 @@ export default function QueryComponent() {
 
   return <pre>{JSON.stringify(data, null, 2)}</pre>;
 }
+
+export default withApollo(QueryComponent);

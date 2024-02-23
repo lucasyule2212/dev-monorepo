@@ -18,11 +18,11 @@ generates:
       documentMode: graphQLTag
 
   src/graphql/generated/page.tsx:
-    # documents: './src/graphql/private/**/*.{gql,graphql}'
+    documents: "./src/graphql/**/*.{gql,graphql}"
     config:
       documentMode: external
       importDocumentNodeExternallyFrom: ./graphql
-      reactApolloVersion: 4
+      reactApolloVersion: 3
       withHooks: true
       contextType: "ApolloClientContext"
       contextTypeRequired: true
@@ -38,7 +38,7 @@ generates:
   #   config:
   #     documentMode: external
   #     importDocumentNodeExternallyFrom: ./graphql
-  #     reactApolloVersion: 4
+  #     reactApolloVersion: 3
   #     withHooks: true
   #     contextType: 'ApolloClientContext'
   #     contextTypeRequired: true

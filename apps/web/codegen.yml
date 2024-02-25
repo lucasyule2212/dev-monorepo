@@ -18,7 +18,7 @@ generates:
       documentMode: graphQLTag
 
   src/graphql/generated/page.tsx:
-    documents: "./src/graphql/**/*.{gql,graphql}"
+    documents: "./src/graphql/private/**/*.{gql,graphql}"
     config:
       documentMode: external
       importDocumentNodeExternallyFrom: ./graphql
@@ -33,18 +33,18 @@ generates:
     plugins:
       - "graphql-codegen-apollo-next-ssr"
 
-  # src/graphql/generated/pagePublic.tsx:
-  #   documents: './src/graphql/public/**/*.{gql,graphql}'
-  #   config:
-  #     documentMode: external
-  #     importDocumentNodeExternallyFrom: ./graphql
-  #     reactApolloVersion: 3
-  #     withHooks: true
-  #     contextType: 'ApolloClientContext'
-  #     contextTypeRequired: true
-  #     apolloClientInstanceImport: '../../lib/withPublicApolloClient'
-  #   preset: import-types
-  #   presetConfig:
-  #     typesPath: ./graphql
-  #   plugins:
-  #     - 'graphql-codegen-apollo-next-ssr'
+  src/graphql/generated/pagePublic.tsx:
+    documents: "./src/graphql/public/**/*.{gql,graphql}"
+    config:
+      documentMode: external
+      importDocumentNodeExternallyFrom: ./graphql
+      reactApolloVersion: 3
+      withHooks: true
+      contextType: "ApolloClientContext"
+      contextTypeRequired: true
+      apolloClientInstanceImport: "../../lib/withPublicApolloClient"
+    preset: import-types
+    presetConfig:
+      typesPath: ./graphql
+    plugins:
+      - "graphql-codegen-apollo-next-ssr"

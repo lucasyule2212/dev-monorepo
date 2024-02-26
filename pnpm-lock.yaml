@@ -373,6 +373,9 @@ importers:
       next:
         specifier: ^14.0.4
         version: 14.1.0(@babel/core@7.23.3)(react-dom@18.2.0)(react@18.2.0)
+      next-http-proxy-middleware:
+        specifier: ^1.2.6
+        version: 1.2.6
       react:
         specifier: ^18.2.0
         version: 18.2.0
@@ -5876,6 +5879,15 @@ packages:
         integrity: sha512-D0CFMMtydbJAegzOyHjtiKPLlvnm3iTZyZRSZoLq2mRhDdmLfIWOCYPfQJ4cu2erKghU++QvjcUjp/5h7hESpA==,
       }
 
+  /@types/http-proxy@1.17.3:
+    resolution:
+      {
+        integrity: sha512-wIPqXANye5BbORbuh74exbwNzj+UWCwWyeEFJzUQ7Fq3W2NSAy+7x7nX1fgbEypr2/TdKqpeuxLnXWgzN533/Q==,
+      }
+    dependencies:
+      "@types/node": 20.10.6
+    dev: false
+
   /@types/istanbul-lib-coverage@2.0.6:
     resolution:
       {
@@ -9827,6 +9839,13 @@ packages:
       }
     dev: false
 
+  /eventemitter3@4.0.7:
+    resolution:
+      {
+        integrity: sha512-8guHBZCwKnFhYdHr2ysuRWErTwhoN2X8XELRlrRwpmfeY2jjuUN4taQMsULKUVo1K4DvZl+0pgfyoysHxvmvEw==,
+      }
+    dev: false
+
   /eventemitter3@5.0.1:
     resolution:
       {
@@ -10250,6 +10269,19 @@ packages:
         integrity: sha512-5nqDSxl8nn5BSNxyR3n4I6eDmbolI6WT+QqR547RwxQapgjQBmtktdP+HTBb/a/zLsbzERTONyUB5pefh5TtjQ==,
       }
     dev: true
+
+  /follow-redirects@1.15.5:
+    resolution:
+      {
+        integrity: sha512-vSFWUON1B+yAw1VN4xMfxgn5fTUiaOzAJCKBwIIgT/+7CuGy9+r+5gITvP62j3RmaD5Ph65UaERdOSRGUzZtgw==,
+      }
+    engines: { node: ">=4.0" }
+    peerDependencies:
+      debug: "*"
+    peerDependenciesMeta:
+      debug:
+        optional: true
+    dev: false
 
   /for-each@0.3.3:
     resolution:
@@ -11039,6 +11071,20 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: true
+
+  /http-proxy@1.18.1:
+    resolution:
+      {
+        integrity: sha512-7mz/721AbnJwIVbnaSv1Cz3Am0ZLT/UBwkC92VlxhXv/k/BBQfM2fXElQNC27BVGr0uwUpplYPQM9LnaBMR5NQ==,
+      }
+    engines: { node: ">=8.0.0" }
+    dependencies:
+      eventemitter3: 4.0.7
+      follow-redirects: 1.15.5
+      requires-port: 1.0.0
+    transitivePeerDependencies:
+      - debug
+    dev: false
 
   /https-proxy-agent@5.0.1:
     resolution:
@@ -13594,6 +13640,19 @@ packages:
       }
     dev: true
 
+  /next-http-proxy-middleware@1.2.6:
+    resolution:
+      {
+        integrity: sha512-vHmtFLeO+HomU4Fx/CoA4MbLnXya1B17yR5qOmpYZqRjzGa17a9dgXh9ONvquSZdMrIn7bUfjoPLxMkYMtKj3Q==,
+      }
+    engines: { node: ">=10.0.0" }
+    dependencies:
+      "@types/http-proxy": 1.17.3
+      http-proxy: 1.18.1
+    transitivePeerDependencies:
+      - debug
+    dev: false
+
   /next-themes@0.2.1(next@14.1.0)(react-dom@18.2.0)(react@18.2.0):
     resolution:
       {
@@ -14969,6 +15028,13 @@ packages:
         integrity: sha512-NKN5kMDylKuldxYLSUfrbo5Tuzh4hd+2E8NPPX02mZtn1VuREQToYe/ZdlJy+J3uCpfaiGF05e7B8W0iXbQHmg==,
       }
     dev: true
+
+  /requires-port@1.0.0:
+    resolution:
+      {
+        integrity: sha512-KigOCHcocU3XODJxsu8i/j8T9tzT4adHiecwORRQ0ZZFcp7ahwXuRU1m+yuO90C5ZUyGeGfocHDI14M3L3yDAQ==,
+      }
+    dev: false
 
   /resolve-cwd@3.0.0:
     resolution:

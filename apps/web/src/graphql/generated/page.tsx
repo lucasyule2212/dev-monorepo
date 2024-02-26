@@ -10,6 +10,7 @@ import {
   getApolloClient,
   ApolloClientContext,
 } from "../../lib/withApolloClient";
+
 export async function getServerPageMe(
   options: Omit<Apollo.QueryOptions<Types.MeQueryVariables>, "query">,
   ctx: ApolloClientContext,

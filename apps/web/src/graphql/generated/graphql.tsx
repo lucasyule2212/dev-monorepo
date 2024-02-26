@@ -122,6 +122,15 @@ export type User = {
   purchases: Array<Purchase>;
 };
 
+export type CreatePurchaseMutationVariables = Exact<{
+  productId: Scalars["String"]["input"];
+}>;
+
+export type CreatePurchaseMutation = {
+  __typename?: "Mutation";
+  createPurchase: { __typename?: "Purchase"; id: string };
+};
+
 export type MeQueryVariables = Exact<{ [key: string]: never }>;
 
 export type MeQuery = {
@@ -136,6 +145,56 @@ export type GetProductsQuery = {
   products: Array<{ __typename?: "Product"; id: string; title: string }>;
 };
 
+export const CreatePurchaseDocument = gql`
+  mutation CreatePurchase($productId: String!) {
+    createPurchase(data: { productId: $productId }) {
+      id
+    }
+  }
+`;
+export type CreatePurchaseMutationFn = Apollo.MutationFunction<
+  CreatePurchaseMutation,
+  CreatePurchaseMutationVariables
+>;
+
+/**
+ * __useCreatePurchaseMutation__
+ *
+ * To run a mutation, you first call `useCreatePurchaseMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useCreatePurchaseMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [createPurchaseMutation, { data, loading, error }] = useCreatePurchaseMutation({
+ *   variables: {
+ *      productId: // value for 'productId'
+ *   },
+ * });
+ */
+export function useCreatePurchaseMutation(
+  baseOptions?: Apollo.MutationHookOptions<
+    CreatePurchaseMutation,
+    CreatePurchaseMutationVariables
+  >,
+) {
+  const options = { ...defaultOptions, ...baseOptions };
+  return Apollo.useMutation<
+    CreatePurchaseMutation,
+    CreatePurchaseMutationVariables
+  >(CreatePurchaseDocument, options);
+}
+export type CreatePurchaseMutationHookResult = ReturnType<
+  typeof useCreatePurchaseMutation
+>;
+export type CreatePurchaseMutationResult =
+  Apollo.MutationResult<CreatePurchaseMutation>;
+export type CreatePurchaseMutationOptions = Apollo.BaseMutationOptions<
+  CreatePurchaseMutation,
+  CreatePurchaseMutationVariables
+>;
 export const MeDocument = gql`
   query Me {
     me {

@@ -50,6 +50,17 @@ export class PurchasesService {
       throw new Error('Customer not found');
     }
 
+    const purchaseExists = await this.prisma.purchase.findFirst({
+      where: {
+        productId,
+        customerId,
+      },
+    });
+
+    if (purchaseExists) {
+      throw new Error('User already purchased this product');
+    }
+
     const purchase = await this.prisma.purchase.create({
       data: {
         productId,

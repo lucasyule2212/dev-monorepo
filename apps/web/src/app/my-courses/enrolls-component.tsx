@@ -123,7 +123,7 @@ export default function EnrollsComponent() {
                 </div>
               </div>
               <div className="ml-5 flex-shrink-0">
-                <Link href={`/app/courses/${enrollment.course.slug}`}>
+                <Link href="#">
                   <Button className="ring-1 ring-cyan-700 bg-slate-950 w-24 rounded-md">
                     {" "}
                     Watch

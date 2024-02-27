@@ -22,14 +22,23 @@ export function Header() {
 
         <div className="space-x-6 sm:flex md:ml-10 items-center">
           {user ? (
-            <Link
-              key="signout"
-              href="/api/auth/logout"
-              className="flex items-center gap-2 text-xs sm:text-sm font-medium text-gray-300 hover:text-white transition-colors bg-slate-950 rounded-md px-3 py-2 hover:bg-slate-800 ring-1 ring-slate-800"
-            >
-              <LogOut className="w-auto h-4" />
-              Sign out
-            </Link>
+            <>
+              <Link
+                key="my-courses"
+                href="/my-courses"
+                className="flex items-center gap-2 text-xs sm:text-sm font-medium text-gray-300 hover:text-white transition-colors bg-slate-950 rounded-md px-3 py-2 hover:bg-slate-800 ring-1 ring-slate-800"
+              >
+                My Courses
+              </Link>
+              <Link
+                key="signout"
+                href="/api/auth/logout"
+                className="flex items-center gap-2 text-xs sm:text-sm font-medium text-gray-300 hover:text-white transition-colors bg-slate-950 rounded-md px-3 py-2 hover:bg-slate-800 ring-1 ring-slate-800"
+              >
+                <LogOut className="w-auto h-4" />
+                Sign out
+              </Link>
+            </>
           ) : (
             <Link
               key="signin"

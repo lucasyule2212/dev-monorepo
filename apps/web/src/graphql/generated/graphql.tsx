@@ -135,7 +135,15 @@ export type MeQueryVariables = Exact<{ [key: string]: never }>;
 
 export type MeQuery = {
   __typename?: "Query";
-  me: { __typename?: "User"; authUserId: string };
+  me: {
+    __typename?: "User";
+    enrollment: Array<{
+      __typename?: "Enrollment";
+      id: string;
+      createdAt?: any | null;
+      course: { __typename?: "Course"; title: string; slug: string };
+    }>;
+  };
 };
 
 export type GetProductsQueryVariables = Exact<{ [key: string]: never }>;
@@ -198,7 +206,14 @@ export type CreatePurchaseMutationOptions = Apollo.BaseMutationOptions<
 export const MeDocument = gql`
   query Me {
     me {
-      authUserId
+      enrollment {
+        id
+        createdAt
+        course {
+          title
+          slug
+        }
+      }
     }
   }
 `;

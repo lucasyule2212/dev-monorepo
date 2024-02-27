@@ -66,6 +66,16 @@ export default function EnrollsComponent() {
     return <div>Error: {error.message}</div>;
   }
 
+  if (data.me.enrollment.length === 0) {
+    return (
+      <div className="shadow flex justify-center items-center overflow-hidden sm:rounded-md mt-8 ring-1 ring-slate-800 p-4">
+        <h1 className="text-slate-500 text-xl font-bold">
+          You are not enrolled in any courses
+        </h1>
+      </div>
+    );
+  }
+
   return (
     <div className="shadow overflow-hidden sm:rounded-md mt-8 ring-1 ring-slate-800">
       <ul role="list" className="divide-y divide-slate-800">
@@ -74,12 +84,12 @@ export default function EnrollsComponent() {
             <div className="px-4 py-4 flex items-center sm:px-6">
               <div className="min-w-0 flex-1 sm:flex sm:items-center sm:justify-between">
                 <div className="truncate">
-                  <div className="flex text-sm">
-                    <p className="font-medium text-indigo-600 truncate">
+                  <div className="flex items-center space-x-3">
+                    <p className="font-medium text-md text-white truncate">
                       {enrollment.course.title}
                     </p>
-                    <p className="ml-1 flex-shrink-0 font-normal text-gray-500">
-                      in Programming
+                    <p className="ml-1 flex-shrink-0 font-normal text-gray-500 text-xs">
+                      in <span className="italic">Programming</span>
                     </p>
                   </div>
                   <div className="mt-2 flex">

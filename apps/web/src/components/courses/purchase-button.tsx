@@ -15,13 +15,16 @@ export function PurchaseButton({ productId }: PurchaseButtonProps) {
     });
 
   async function handlePurchaseProduct(productId: string) {
-    await createPurchase({
-      variables: {
-        productId,
-      },
-    });
-
-    toast.success("Enrollment successful! 🎉");
+    try {
+      await createPurchase({
+        variables: {
+          productId,
+        },
+      });
+      toast.success("Enrollment successful! 🎉");
+    } catch (error) {
+      toast.error("You are already enrolled in this course.");
+    }
   }
 
   return (

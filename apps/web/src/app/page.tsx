@@ -61,7 +61,7 @@ export async function handleAuth(req: NextRequest, res: NextResponse) {
 }
 
 async function Home(req: NextRequest, res: NextResponse) {
-  await handleAuth(req, res);
+  // await handleAuth(req, res);
 
   return (
     <>

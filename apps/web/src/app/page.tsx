@@ -12,6 +12,7 @@ import {
 import Image from "next/image";
 import { redirect } from "next/navigation";
 import { NextRequest, NextResponse } from "next/server";
+import { BackgroundGradient } from "@repo/ui/components/ui/background-gradient";
 
 const advantages = [
   {
@@ -126,7 +127,10 @@ async function Home(req: NextRequest, res: NextResponse) {
                   <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
                     {advantages.map((advantage) => (
                       <div key={advantage.name} className="pt-6">
-                        <div className="flow-root ring-1 ring-slate-900 rounded-lg px-6 pb-8 min-h-64">
+                        <BackgroundGradient
+                          animate={false}
+                          className="flow-root ring-1 bg-slate-950 ring-slate-900 rounded-[22px] p-4 min-h-64"
+                        >
                           <div className="-mt-6">
                             <div>
                               <span className="inline-flex items-center justify-center p-3 bg-gradient-to-r from-slate-900 to-slate-950 rounded-md shadow-lg">
@@ -143,7 +147,7 @@ async function Home(req: NextRequest, res: NextResponse) {
                               {advantage.description}
                             </p>
                           </div>
-                        </div>
+                        </BackgroundGradient>
                       </div>
                     ))}
                   </div>

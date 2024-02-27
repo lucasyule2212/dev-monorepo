@@ -1,30 +1,10 @@
 "use client";
-import {
-  useCreatePurchaseMutation,
-  useGetProductsQuery,
-} from "@/graphql/generated/graphql";
-import { Button } from "@repo/ui/components/ui/button";
+import { PurchaseButton } from "@/components/courses/purchase-button";
+import { useGetProductsQuery } from "@/graphql/generated/graphql";
 import { Skeleton } from "@repo/ui/components/ui/skeleton";
-import { toast } from "sonner";
 
 function CoursesComponent() {
   const { data, loading, error } = useGetProductsQuery();
-
-  const [createPurchase] = useCreatePurchaseMutation({
-    variables: {
-      productId: "",
-    },
-  });
-
-  async function handlePurchaseProduct(productId: string) {
-    await createPurchase({
-      variables: {
-        productId,
-      },
-    });
-
-    toast.success("Inscrição realizada com sucesso!");
-  }
 
   if (loading || !data) {
     return (
@@ -75,12 +55,7 @@ function CoursesComponent() {
                 </div>
               </div>
               <div className="ml-5 flex-shrink-0">
-                <Button
-                  onClick={() => handlePurchaseProduct(product.id)}
-                  className="ring-1 ring-cyan-700 bg-slate-950 w-24"
-                >
-                  Enroll
-                </Button>
+                <PurchaseButton productId={product.id} />
               </div>
             </div>
           </li>

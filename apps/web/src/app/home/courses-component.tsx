@@ -1,19 +1,27 @@
 "use client";
-import { useGetProductsQuery } from "@/graphql/generated/graphql";
-import { withApollo } from "@/lib/withApolloClient";
+import {
+  useCreatePurchaseMutation,
+  useGetProductsQuery,
+} from "@/graphql/generated/graphql";
+import { Button } from "@repo/ui/components/ui/button";
 import { Skeleton } from "@repo/ui/components/ui/skeleton";
 import { toast } from "sonner";
 
 function CoursesComponent() {
   const { data, loading, error } = useGetProductsQuery();
-  // const [createPurchase] = useCreatePurchaseMutation()
+
+  const [createPurchase] = useCreatePurchaseMutation({
+    variables: {
+      productId: "",
+    },
+  });
 
   async function handlePurchaseProduct(productId: string) {
-    // await createPurchase({
-    //   variables: {
-    //     productId,
-    //   }
-    // })
+    await createPurchase({
+      variables: {
+        productId,
+      },
+    });
 
     toast.success("Inscrição realizada com sucesso!");
   }
@@ -49,30 +57,30 @@ function CoursesComponent() {
   }
 
   return (
-    <div className="shadow overflow-hidden sm:rounded-md mt-8 ring-1 ring-slate-800">
+    <div className="shadow overflow-hidden sm:rounded-md mt-8 ring-1 ring-slate-800 mb-8">
       <ul role="list" className="divide-y divide-slate-800">
         {data.products.map((product) => (
           <li key={product.id}>
             <div className="px-4 py-4 flex items-center sm:px-6">
               <div className="min-w-0 flex-1 sm:flex sm:items-center sm:justify-between">
                 <div className="truncate">
-                  <div className="flex text-sm">
-                    <p className="font-medium text-indigo-600 truncate">
+                  <div className="flex items-center space-x-3">
+                    <p className="font-medium text-md text-white truncate">
                       {product.title}
                     </p>
-                    <p className="ml-1 flex-shrink-0 font-normal text-gray-500">
-                      em Programação
+                    <p className="ml-1 flex-shrink-0 font-normal text-gray-500 text-xs">
+                      in <span className="italic">Programming</span>
                     </p>
                   </div>
                 </div>
               </div>
               <div className="ml-5 flex-shrink-0">
-                <button
+                <Button
                   onClick={() => handlePurchaseProduct(product.id)}
-                  className="px-2 py-1 border border-transparent text-base font-medium rounded-md text-white bg-violet-600 hover:bg-violet-700"
+                  className="ring-1 ring-cyan-700 bg-slate-950 w-24"
                 >
-                  Realizar inscrição
-                </button>
+                  Enroll
+                </Button>
               </div>
             </div>
           </li>
@@ -82,4 +90,4 @@ function CoursesComponent() {
   );
 }
 
-export default withApollo(CoursesComponent);
+export default CoursesComponent;

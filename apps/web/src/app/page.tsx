@@ -9,7 +9,6 @@ import {
   FileText as DocumentTextIcon,
   BadgeInfo as SupportIcon,
 } from "lucide-react";
-import { Metadata } from "next";
 import Image from "next/image";
 import { redirect } from "next/navigation";
 import { NextRequest, NextResponse } from "next/server";
@@ -56,9 +55,7 @@ const advantages = [
 export async function handleAuth(req: NextRequest, res: NextResponse) {
   const session = await getSession(req, res);
 
-  if (!session) {
-    redirect("/api/auth/login");
-  } else {
+  if (session) {
     redirect("/home");
   }
 }

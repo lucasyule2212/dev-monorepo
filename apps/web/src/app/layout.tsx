@@ -2,7 +2,7 @@ import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { ApolloClientProvider } from "@/lib/apolloProvider";
 import ClientProvider from "@/providers/client-provider";
-import { getAccessToken } from "@auth0/nextjs-auth0";
+import { getAccessToken, getSession } from "@auth0/nextjs-auth0";
 import { Toaster } from "@repo/ui/components/ui/sonner";
 import "@repo/ui/globals.css";
 import type { Metadata } from "next";
@@ -14,13 +14,17 @@ export const metadata: Metadata = {
   title: "Workflow",
 };
 
-const { accessToken } = await getAccessToken();
-
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
-}): JSX.Element {
+}) {
+  const session = await getSession();
+
+  const { accessToken } = session
+    ? await getAccessToken({})
+    : { accessToken: undefined };
+
   return (
     <html lang="en">
       <ClientProvider>

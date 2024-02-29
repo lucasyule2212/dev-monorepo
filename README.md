@@ -60,6 +60,7 @@ Project of an online course platform using a monorepo with Next.js for the front
 - GraphQL + Apollo Client practical studies
 - Apollo Federation
 - GraphQL Codegen
+- Deploy in Amazon Beanstalk (**upcoming**)
 
 ## Project Architecture
 ![arch](https://github.com/lucasyule2212/dev-monorepo/assets/55456226/e773172a-4f5d-4562-bd5e-fd3e9ab417ea)

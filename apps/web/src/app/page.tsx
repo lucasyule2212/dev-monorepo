@@ -53,15 +53,15 @@ const advantages = [
   },
 ];
 
-export async function handleAuth(req: NextRequest, res: NextResponse) {
-  const session = await getSession(req, res);
+// export async function handleAuth(req: NextRequest, res: NextResponse) {
+//   const session = await getSession(req, res);
 
-  if (session) {
-    redirect("/home");
-  }
-}
+//   if (session) {
+//     redirect("/home");
+//   }
+// }
 
-async function Home(req: NextRequest, res: NextResponse) {
+async function Home() {
   // await handleAuth(req, res);
 
   return (
